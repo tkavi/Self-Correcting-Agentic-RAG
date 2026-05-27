@@ -7,10 +7,10 @@ Intelligent RAG assistant capable of answering complex medical compliance questi
 2. Open VSCode only after installing Ollama so VSCode can recognize Ollama
 
 3. Create a new project directory in VS Code and run below commands in Terminal
-   1. Create the virtual environment
+   1. Create the virtual environment <br>
       python -m venv venv
 
-   3. Activate it (Windows PowerShell)
+   3. Activate it (Windows PowerShell) -> 
 	.\venv\Scripts\Activate.ps1
 
     Run below if this error (cannot be loaded because running scripts is disabled on this system) and try again
@@ -21,10 +21,10 @@ Intelligent RAG assistant capable of answering complex medical compliance questi
 	ollama pull phi3 (for fast rephrasing and safety checks)
 	ollama pull nomic-embed-text (embedding model)
 
-   4. Test that Ollama is awake and responsive
+   4. Test that Ollama is awake and responsive -> 
 	ollama list
 
-   5. Install required python libraries
+   5. Install required python libraries -> 
 	pip install langgraph langchain_ollama langchain_community chromadb
 
 	langgraph: Orchestrates the stateful graph, handling loops and conditional routing.  
@@ -32,11 +32,11 @@ Intelligent RAG assistant capable of answering complex medical compliance questi
 	langchain-community: Provides helpful, pre-built utility integrations to load, split, and manage raw text documents before sending them to Chroma.
 	chromadb: Acts as local embedded vector database to store and query document context without cloud dependencies.
 
-   6. Install relevant guardrails library
+   6. Install relevant guardrails library -> 
 	pip install guardrails-ai
 	guardrails hub install hub://guardrails/toxic_language
 
-   7. requirements.txt
+   7. requirements.txt -> 
 	pip freeze > requirements.txt
 	
 	This file lists all the external packages project depends on. If this project moved to another computer or uploaded to GitHub, anyone can recreate the exact environment with a single command instead of guessing what to install.
