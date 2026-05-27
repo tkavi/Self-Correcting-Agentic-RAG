@@ -1,0 +1,16 @@
+# Ignore the entire python virtual environment
+venv/
+.venv/
+env/
+
+# Ignore local configuration and diagrams
+.env
+graph.png
+.chroma/
+
+# Ignore the local ChromaDB vector database directory
+chroma_db/
+
+# Ignore evaluation scripts and test databases
+ragas_evals.py
+test_db.py
