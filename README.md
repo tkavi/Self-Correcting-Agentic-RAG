@@ -10,40 +10,40 @@ Intelligent RAG assistant capable of answering complex medical compliance questi
    1. Create the virtual environment <br>
       python -m venv venv
 
-   3. Activate it (Windows PowerShell) -> 
+   3. Activate it (Windows PowerShell) <br> 
 	.\venv\Scripts\Activate.ps1
 
     Run below if this error (cannot be loaded because running scripts is disabled on this system) and try again
 	Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
 	
-   3. Install required ollama libraries
-	ollama pull llama3.1 (for complex reasoning and answering)
-	ollama pull phi3 (for fast rephrasing and safety checks)
-	ollama pull nomic-embed-text (embedding model)
+   3. Install required ollama libraries <br>
+	ollama pull llama3.1 (for complex reasoning and answering) <br>
+	ollama pull phi3 (for fast rephrasing and safety checks) <br>
+	ollama pull nomic-embed-text (embedding model) <br>
 
-   4. Test that Ollama is awake and responsive -> 
+   4. Test that Ollama is awake and responsive <br>
 	ollama list
 
-   5. Install required python libraries -> 
+   5. Install required python libraries <br> 
 	pip install langgraph langchain_ollama langchain_community chromadb
 
-	langgraph: Orchestrates the stateful graph, handling loops and conditional routing.  
-	langchain-ollama: Connects graph nodes directly to our local Ollama models (Llama 3.1 and Phi-3) for both text generation and vector embeddings.
-	langchain-community: Provides helpful, pre-built utility integrations to load, split, and manage raw text documents before sending them to Chroma.
-	chromadb: Acts as local embedded vector database to store and query document context without cloud dependencies.
+	langgraph: Orchestrates the stateful graph, handling loops and conditional routing <br>
+	langchain-ollama: Connects graph nodes directly to our local Ollama models (Llama 3.1 and Phi-3) for both text generation and vector embeddings <br>
+	langchain-community: Provides helpful, pre-built utility integrations to load, split, and manage raw text documents before sending them to Chroma <br>
+	chromadb: Acts as local embedded vector database to store and query document context without cloud dependencies <br>
 
-   6. Install relevant guardrails library -> 
-	pip install guardrails-ai
-	guardrails hub install hub://guardrails/toxic_language
+   6. Install relevant guardrails library <br> 
+	pip install guardrails-ai <br>
+	guardrails hub install hub://guardrails/toxic_language <br>
 
-   7. requirements.txt -> 
-	pip freeze > requirements.txt
+   7. requirements.txt <br> 
+	pip freeze > requirements.txt <br>
 	
 	This file lists all the external packages project depends on. If this project moved to another computer or uploaded to GitHub, anyone can recreate the exact environment with a single command instead of guessing what to install.
 
-   8. dotenv file
-	New-Item -Path .env -ItemType File
-	pip install python-dotenv (to access this .env file inside code)
+   8. dotenv file <br>
+	New-Item -Path .env -ItemType File <br>
+	pip install python-dotenv (to access this .env file inside code) <br>
 	
 	Since this is a entirely local project running on Ollama, we don't have secret API keys (like OpenAI keys) to hide right now. However, a .env file is still incredibly useful for defining configuration variables like local model names or database paths. If we decide to switch from a local model to an enterprise cloud model later, we only have to change it in this one file instead of hunting through the code.
 
@@ -56,13 +56,13 @@ In workspace, create 3 blank Python files:
 
 **Flow of pipeline:**
 1. user_query
-2. guardrails_toxic_language check 
-		approved - move forward 
-		not approved - stop the flow 
+2. guardrails_toxic_language check <br> 
+		approved - move forward <br> 
+		not approved - stop the flow <br>
 3. vague query -> followup 
-4. right query -> fetch the response from vector db 
-		if relevant -> reverify using evals -> generate response
-		not relevant -> rephrase the query -> right query
+4. right query -> fetch the response from vector db <br> 
+		if relevant -> reverify using evals -> generate response <br>
+		not relevant -> rephrase the query -> right query <br>
 
 <img width="1206" height="550" alt="image" src="https://github.com/user-attachments/assets/d5b96ad4-861f-4531-ac06-63188b139e2c" />
  
@@ -70,12 +70,12 @@ In workspace, create 3 blank Python files:
 
 To test using real pdf: pip install pypdf
 
-**Git Setup **
-create .gitignore and add all unwanted files and folders
-git init
-git add .
-git commit -m "project structure and RAG architecture setup"
-git branch -M main
-git remote add origin https://github.com/tkavi/Self-Correcting-Agentic-RAG.git
-git pull origin main --allow-unrelated-histories (if repo created already)
-git push origin main
+**Git Setup**
+create .gitignore and add all unwanted files and folders <br>
+git init <br>
+git add . <br>
+git commit -m "project structure and RAG architecture setup" <br>
+git branch -M main <br>
+git remote add origin https://github.com/tkavi/Self-Correcting-Agentic-RAG.git <br>
+git pull origin main --allow-unrelated-histories (if repo created already) <br>
+git push origin main <br>
