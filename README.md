@@ -7,7 +7,7 @@ Intelligent RAG assistant capable of answering complex medical compliance questi
 2. Open VSCode only after installing Ollama so VSCode can recognize Ollama
 
 3. Create a new project directory in VS Code and run below commands in Terminal
-   1. Create the virtual environment
+   1. Create the virtual environment\n
 	python -m venv venv
 
    2. Activate it (Windows PowerShell)
