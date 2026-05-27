@@ -68,7 +68,8 @@ In workspace, create 3 blank Python files: <br>
 		if relevant -> reverify using evals -> generate response <br>
 		not relevant -> rephrase the query -> right query <br>
 
-<img width="1206" height="550" alt="image" src="https://github.com/user-attachments/assets/d5b96ad4-861f-4531-ac06-63188b139e2c" />
+<img width="426" height="531" alt="image" src="https://github.com/user-attachments/assets/d2362f6e-74c3-4329-aa38-7de576a623fd" />
+
  
  _guardrails_ai_: https://guardrailsai.com/hub/validator/guardrails/toxic_language
 
