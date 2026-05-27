@@ -2,7 +2,8 @@
 Intelligent RAG assistant capable of answering complex medical compliance questions 
 
 **Local Environment Setup**
-1. Install Ollama -> to run LLMs locally
+1. Install Ollama -> to run LLMs locally <br>
+   https://ollama.com/download/windows
 
 2. Open VSCode only after installing Ollama so VSCode can recognize Ollama
 
