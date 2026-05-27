@@ -20,6 +20,7 @@ from state import State as state_class
 load_dotenv()
 
 llm_model = os.getenv("LLM_MODEL")
+
 # to set a default value
 if llm_model is None:
     llm_model = "llama3.1"
@@ -231,6 +232,7 @@ def rephrase_node(state : state_class) -> dict:
         "loop_count": current_loop + 1
     }
 
+# --------------- FOLLOWUP NODE ------------------ #
 def followup_node(state : state_class) -> dict:
 
     print("NODE -> Follow-up")
