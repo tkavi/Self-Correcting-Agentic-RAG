@@ -47,12 +47,15 @@ Intelligent RAG assistant capable of answering complex medical compliance questi
 	pip install python-dotenv (to access this .env file inside code) <br>
 	
 	Since this is a entirely local project running on Ollama, we don't have secret API keys (like OpenAI keys) to hide right now. However, a .env file is still incredibly useful for defining configuration variables like local model names or database paths. If we decide to switch from a local model to an enterprise cloud model later, we only have to change it in this one file instead of hunting through the code.
+    
+	10. To test using real pdf <br>
+		pip install pypdf
 
 **Project Setup** <br>
-In workspace, create 3 blank Python files: 
-	- state.py (to define the data structure that moves through nodes)
-	- nodes.py (to write the logic for guardrails, rephrasing, and ChromaDB retrieval)
-	- main.py (to orchestrate the LangGraph workflow and run the input() loop)
+In workspace, create 3 blank Python files: <br>
+- state.py (to define the data structure that moves through nodes)
+- nodes.py (to write the logic for guardrails, rephrasing, and ChromaDB retrieval)
+- main.py (to orchestrate the LangGraph workflow and run the input() loop)
 
 
 **Flow of pipeline:**
@@ -67,10 +70,7 @@ In workspace, create 3 blank Python files:
 
 <img width="1206" height="550" alt="image" src="https://github.com/user-attachments/assets/d5b96ad4-861f-4531-ac06-63188b139e2c" />
  
- guardrails_ai: https://guardrailsai.com/hub/validator/guardrails/toxic_language
-
-To test using real pdf <br>
-pip install pypdf
+ _guardrails_ai_: https://guardrailsai.com/hub/validator/guardrails/toxic_language
 
 **Git Setup** <br>
 create .gitignore and add all unwanted files and folders <br>
