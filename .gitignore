@@ -14,3 +14,7 @@ chroma_db/
 # Ignore evaluation scripts and test databases
 ragas_evals.py
 test_db.py
+
+# Ignore Python bytecode cache directories and files
+__pycache__/
+*.pyc
